@@ -15,8 +15,8 @@ public class TestImpl implements Test{
 	}
 
 	@Override
-	public int selectAge(String name) {
-		return -1;
+	public String selectPwd(String username) {
+		return "服务暂不可用";
 	}
 
 	@Override

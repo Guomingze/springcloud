@@ -16,15 +16,17 @@ public class PersionServiceImpl implements PersionService {
 	@Override
 	public List<Persion> all() {
 		List<Persion> all = persondao.all();
+		System.out.println("垃圾");
 		return all;
 	}
 
 	@Override
-	public Persion selectAge(String name) {
-		Persion selectAge = persondao.selectAge(name);
+	public Persion selectPwd(String username) {
+		Persion selectAge = persondao.selectPwd(username);
 		if(selectAge==null) {
 			return null;
 		}
+		System.out.println(selectAge.getPwd());
 		return selectAge;
 	}
 
@@ -34,7 +36,7 @@ public class PersionServiceImpl implements PersionService {
 		if(addPersion==0) {
 			return "增加失败" ;
 		}
-		System.out.println(persion.getName());
+		System.out.println(persion.getUsername());
 		return "增加成功";
 	}
 

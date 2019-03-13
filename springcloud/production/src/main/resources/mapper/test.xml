@@ -3,23 +3,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.production.dao.PersonDao">
 	<select id="all" resultType="Persion">
-		select id,name,age from Person
+		select id,username,pwd from persion
 	</select>
 	
-	<select id="selectAge" resultType="Persion" parameterType="String">
-		select age from Person where name=#{name}
+	<select id="selectPwd" resultType="Persion" parameterType="String">
+		select pwd from persion where username=#{username}
 	</select> 
 	<insert id="addPersion" parameterType="Persion">
-		insert into Person values (#{id},#{name},#{age})
+		insert into persion values (#{id},#{username},#{pwd})
 	</insert>
 	<update id="updatePersion" parameterType="Persion">
-		update Person
+		update persion
 		<trim prefix="set" suffixOverrides=",">
-			<if test="name!=null">name=#{name}</if>
-			<if test="age!=null">age=#{age}</if>
+			<if test="name!=null">username=#{username}</if>
+			<if test="age!=null">pwd=#{pwd}</if>
 		</trim>
 	</update>
 	<delete id="delPersion" parameterType="Integer">
-		delete from Person where id=#{id} 
+		delete from persion where id=#{id} 
 	</delete>
 </mapper>

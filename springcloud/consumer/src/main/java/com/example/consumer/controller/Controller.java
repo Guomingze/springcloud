@@ -16,17 +16,18 @@ public class Controller {
 	private Test test;
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	List<Persion> all(){
+		System.out.println("呵呵呵");
 		return test.all();
 	}
 	
-	@RequestMapping(value = "/selectAge",method = RequestMethod.POST)
-	public int selectAge(String name) {
-		return test.selectAge(name);
+	@RequestMapping(value = "/selectPwd",method = RequestMethod.POST)
+	public String selectPwd(String username) {
+		return test.selectPwd(username);
 	}
 	
 	@RequestMapping(value = "/addPersion",method = RequestMethod.POST)
 	public String addPersion(Persion persion) {
-		System.out.println(persion.getName());
+		System.out.println(persion.getUsername());
 		return test.addPersion(persion);
 	}
 	

@@ -19,15 +19,19 @@ public class TestController {
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	public List<Persion> all() {
 		List<Persion> all = persionService.all();
+		for (Persion persion : all) {
+			System.out.println(persion.getUsername());
+		}
 		return all;
 	}
-	@RequestMapping(value = "selectAge",method = RequestMethod.POST)
-	public int selectAge(@RequestParam("name")String name) {
-		Persion selectAge = persionService.selectAge(name);
+	@RequestMapping(value = "selectPwd",method = RequestMethod.POST)
+	public String selectPwd(@RequestParam("username")String username) {
+		Persion selectAge = persionService.selectPwd(username);
 		if(selectAge==null) {
-			return -1;
+			return null;
 		}
-		return selectAge.getAge();
+		System.out.println(selectAge.getPwd());
+		return selectAge.getPwd();
 	}
 	@RequestMapping(value = "addPersion",method = RequestMethod.POST)
 	public String addPersion(@RequestBody Persion persion) {
