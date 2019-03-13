@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: springcloud-zuul
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: 
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 10
+        max-wait: 1000
+        min-idle: 5
+server:
+  port: 8804
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka/
+zuul:
+  routes:
+    test-consumer: /persion/**
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+
+ 

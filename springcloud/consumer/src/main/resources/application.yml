@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: test-consumer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+server:
+  port: 8803
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka/
+feign:
+  hystrix:
+    enabled: true

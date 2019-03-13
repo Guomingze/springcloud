@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.production.dao.PersonDao">
+	<select id="all" resultType="Persion">
+		select id,name,age from Person
+	</select>
+	
+	<select id="selectAge" resultType="Persion" parameterType="String">
+		select age from Person where name=#{name}
+	</select> 
+	<insert id="addPersion" parameterType="Persion">
+		insert into Person values (#{id},#{name},#{age})
+	</insert>
+	<update id="updatePersion" parameterType="Persion">
+		update Person
+		<trim prefix="set" suffixOverrides=",">
+			<if test="name!=null">name=#{name}</if>
+			<if test="age!=null">age=#{age}</if>
+		</trim>
+	</update>
+	<delete id="delPersion" parameterType="Integer">
+		delete from Person where id=#{id} 
+	</delete>
+</mapper>
