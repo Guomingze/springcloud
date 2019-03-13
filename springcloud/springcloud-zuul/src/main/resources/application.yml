@@ -13,7 +13,7 @@ spring:
         max-wait: 1000
         min-idle: 5
 server:
-  port: 8804
+  port: 8807
 eureka:
   client:
     service-url:
@@ -21,8 +21,14 @@ eureka:
 zuul:
   routes:
     test-consumer: /persion/**
+    login-consumer:
+      path: /login/**
+      sensitive-headers: "/"
   host:
-    connect-timeout-millis: 3000
-    socket-timeout-millis: 3000
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 10000
+  #需要忽略的头部信息,不在传播到其他服务  
+  sensitive-headers: Access-Control-Allow-Origin
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
 
  
