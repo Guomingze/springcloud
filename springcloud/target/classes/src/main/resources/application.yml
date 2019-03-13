@@ -21,11 +21,9 @@ eureka:
 zuul:
   routes:
     test-consumer: /persion/**
-    login-consumer:
-      path: /login/**
-      sensitive-headers: "/"
+    login-consumer: /login/**
   host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 10000
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
 
  
