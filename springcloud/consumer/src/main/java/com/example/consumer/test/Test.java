@@ -12,7 +12,7 @@ import com.example.consumer.pojo.Persion;
 public interface Test {
 	@RequestMapping(value = "/persion/all",method = RequestMethod.GET)
 	List<Persion> all();
-	@RequestMapping(value = "/persion/selectAge",method = RequestMethod.POST)
+	@RequestMapping(value = "/persion/selectPwd",method = RequestMethod.POST)
 	public String selectPwd(@RequestParam("username") String username);
 	@RequestMapping(value = "/persion/addPersion",method = RequestMethod.POST)
 	public String addPersion(Persion persion);

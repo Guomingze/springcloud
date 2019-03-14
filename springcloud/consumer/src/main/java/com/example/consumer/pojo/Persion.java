@@ -3,7 +3,7 @@ package com.example.consumer.pojo;
 public class Persion {
 	private Integer id;
 	private String username;
-	private Integer pwd;
+	private String pwd;
 	public Integer getId() {
 		return id;
 	}
@@ -16,11 +16,12 @@ public class Persion {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public Integer getPwd() {
+	public String getPwd() {
 		return pwd;
 	}
-	public void setPwd(Integer pwd) {
+	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	};
+	}
+	
 	
 }

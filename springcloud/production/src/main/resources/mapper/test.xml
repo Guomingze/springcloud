@@ -15,9 +15,10 @@
 	<update id="updatePersion" parameterType="Persion">
 		update persion
 		<trim prefix="set" suffixOverrides=",">
-			<if test="name!=null">username=#{username}</if>
-			<if test="age!=null">pwd=#{pwd}</if>
+			<if test="username!=null">username=#{username}</if>
+			<if test="pwd!=null">pwd=#{pwd}</if>
 		</trim>
+		where id=#{id}
 	</update>
 	<delete id="delPersion" parameterType="Integer">
 		delete from persion where id=#{id} 
