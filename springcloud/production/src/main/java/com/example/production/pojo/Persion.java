@@ -2,27 +2,26 @@ package com.example.production.pojo;
 
 public class Persion {
 	private Integer id;
-	private String name;
-	private Integer age;;
+	private String username;
+	private String pwd;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Persion() {
-		// TODO Auto-generated constructor stub
+	public String getUsername() {
+		return username;
 	}
-	public String getName() {
-		return name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public String getPwd() {
+		return pwd;
 	}
-	public Integer getAge() {
-		return age;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+	
+	
 }
