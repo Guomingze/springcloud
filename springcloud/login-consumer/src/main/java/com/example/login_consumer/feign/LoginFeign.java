@@ -1,8 +1,8 @@
 package com.example.login_consumer.feign;
 
+
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.login_consumer.utils.ResponseBean;
@@ -17,14 +17,14 @@ public interface LoginFeign {
 	 * @param password 密码
 	 * @return
 	 */
-	 @RequestMapping(value = "/login", method = RequestMethod.POST)
+	 @PostMapping(value = "/login")
 	 ResponseBean login (@RequestParam String username, @RequestParam String password);
 	 
 	 /**
 	  * 测试
 	  * @return
 	  */
-	 @RequestMapping("/test")
+	 @PostMapping("/test")
 	 String test(); 
 
 }

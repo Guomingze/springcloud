@@ -1,6 +1,5 @@
 package com.example.login_production.service.impl;
 
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -28,7 +27,7 @@ public class LoginServiceImpl implements LoginService {
         } catch (Exception e) {
         	return new ResponseBean(400, "Login failure", "密码错误");
         }
-        return new ResponseBean(200, "Login success", "登录成功");
+        return new ResponseBean(200, "Login success", SecurityUtils.getSubject().getSession().getId().toString());
 	}
 
 }

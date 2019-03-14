@@ -16,6 +16,7 @@ public class ExceptionHandlerController {
         response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
         System.out.println("=====================全局异常信息捕获=======================");
         System.err.println(ex.getMessage());
+        ex.printStackTrace();
         PrintWriter writer = null;
         try {
             HttpServletResponse httpServletResponse = (HttpServletResponse) response;
